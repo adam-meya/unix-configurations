@@ -194,3 +194,11 @@ imap <silent> <C-T> <ESC>:ConqueTermVSplit bash<CR>
 
 set path+=/Users/adomurad/sources/locl
 let g:ConqueTerm_CloseOnEnd=1
+
+" TODO organize this better
+"if has("unix")
+"  let s:uname = system("uname")
+"  if s:uname == "Darwin\n"
+"    " Do Mac stuff here
+"  endif
+"endif
