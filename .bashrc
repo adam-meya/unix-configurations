@@ -56,7 +56,8 @@ alias dielanarts='for i in 2 9 ; do pkill "-$i" lanarts ; sleep 1 ; done'
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
 alias pygrep="gfind . -name '*.py' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
-alias jsgrep="gfind . -name '*.js' -o -name '*.html' -o -name '*.css' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
+#alias jsgrep="gfind . -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
+alias jsgrep="gfind . \( -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
 
 alias find="gfind"
 #alias xargs="gxargs"

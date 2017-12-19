@@ -162,9 +162,9 @@ let g:ale_open_list = 1
 "let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size_max = 99
 let b:ale_list_window_size = 1
-let g:ale_python_pylint_options = "--disable=missing-docstring --disable=too-few-public-methods --disable=import-error --disable=invalid-name --disable=redefined-builtin --disable=too-many-instance-attributes --disable=too-many-arguments --disable=fixme --disable=ungrouped-imports --disable=no-self-use --disable=too-many-return-statements --disable=no-else-return --disable=wrong-import-order --disable=len-as-condition --disable=too-many-public-methods"
+let g:ale_python_pylint_options = "--disable=missing-docstring --disable=too-few-public-methods --disable=import-error --disable=invalid-name --disable=redefined-builtin --disable=too-many-instance-attributes --disable=too-many-arguments --disable=fixme --disable=ungrouped-imports --disable=no-self-use --disable=too-many-return-statements --disable=no-else-return --disable=wrong-import-order --disable=len-as-condition --disable=too-many-public-methods --disable=superfluous-parens"
 " Reduce overlap with pylint:
-let g:ale_python_flake8_options = "--ignore=F401,F811,F841"
+let g:ale_python_flake8_options = "--ignore=F401,F811,F841,E722"
 
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
