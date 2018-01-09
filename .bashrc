@@ -66,7 +66,7 @@ export CLICOLOR=1
 export NGROK_SUBDOMAIN=dev37
 export WEB_ROOT="https://$NGROK_SUBDOMAIN.ngrok.io"
 export PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]'
-export FZF_DEFAULT_COMMAND="gfind . -name '*.py'"
+export FZF_DEFAULT_COMMAND="gfind . \( -name '*.py' -o -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*'"
 
 function git_push_as() {
     branch=$1

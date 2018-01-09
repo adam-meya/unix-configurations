@@ -47,6 +47,7 @@ au BufRead,BufNewFile *.ts        setlocal filetype=typescript
 au BufRead,BufNewFile *.tsx       setlocal filetype=typescript
 au BufRead,BufNewFile *.tl        setlocal filetype=lua
 au BufRead,BufNewFile *.v        setlocal filetype=coq
+au BufRead,BufNewFile *.moon        setlocal filetype=moon
 au BufWritePre *.py %s/\s\+$//e 
 au BufWritePre *.py %s#\($\n\s*\)\+\%$##e
 call vundle#begin()
@@ -57,6 +58,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'leafgarland/typescript-vim'
 
+Bundle 'airblade/vim-gitgutter'
 Bundle 'leafo/moonscript-vim'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'tpope/vim-sensible'
@@ -154,15 +156,16 @@ set mouse=a
 
 " Check Python files with flake8 and pylint.
 let g:ale_linters = {
-\   'python': ['pylint', 'flake8']
+\   'python': ['pylint', 'flake8'],
+\   'javascript': ['eslint']
 \}
 
 let g:ale_set_highlights = 0
 let g:ale_open_list = 1
 "let g:ale_keep_list_window_open = 1
-let g:ale_list_window_size_max = 99
+let g:ale_list_window_size_max = 5
 let b:ale_list_window_size = 1
-let g:ale_python_pylint_options = "--disable=missing-docstring --disable=too-few-public-methods --disable=import-error --disable=invalid-name --disable=redefined-builtin --disable=too-many-instance-attributes --disable=too-many-arguments --disable=fixme --disable=ungrouped-imports --disable=no-self-use --disable=too-many-return-statements --disable=no-else-return --disable=wrong-import-order --disable=len-as-condition --disable=too-many-public-methods --disable=superfluous-parens"
+let g:ale_python_pylint_options = "--disable=missing-docstring --disable=too-few-public-methods --disable=import-error --disable=invalid-name --disable=redefined-builtin --disable=too-many-instance-attributes --disable=too-many-arguments --disable=fixme --disable=ungrouped-imports --disable=no-self-use --disable=too-many-return-statements --disable=no-else-return --disable=wrong-import-order --disable=len-as-condition --disable=too-many-public-methods --disable=superfluous-parens --disable=too-many-locals --disable=too-many-statements --disable=too-many-branches --disable=broad-except"
 " Reduce overlap with pylint:
 let g:ale_python_flake8_options = "--ignore=F401,F811,F841,E722"
 
