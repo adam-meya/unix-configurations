@@ -59,6 +59,8 @@ alias pygrep="gfind . -name '*.py' ! -path './env/*' ! -path './env/*' ! -path '
 #alias jsgrep="gfind . -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
 alias jsgrep="gfind . \( -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
 
+alias luagrep="gfind . \( -name '*.lua' -o -name '*.moon' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
+
 alias find="gfind"
 #alias xargs="gxargs"
 

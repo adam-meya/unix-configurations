@@ -59,6 +59,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'leafgarland/typescript-vim'
 
 Bundle 'airblade/vim-gitgutter'
+Bundle "wesQ3/vim-windowswap"
 Bundle 'leafo/moonscript-vim'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'tpope/vim-sensible'
@@ -89,7 +90,7 @@ au BufNewFile,BufRead *.den setlocal ft=yaml
 " For citymode
 colorscheme pablo
 
-let maplocalleader = "'"
+let maplocalleader = ","
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
@@ -145,8 +146,8 @@ highlight Type ctermfg=green
 
 set backspace=indent,eol,start " backspace over everything in insert mode
 
+"  \ '': 'vsplit',
 let g:fzf_action = {
-  \ '': 'vsplit',
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
@@ -162,6 +163,9 @@ let g:ale_linters = {
 
 let g:ale_set_highlights = 0
 let g:ale_open_list = 1
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 "let g:ale_keep_list_window_open = 1
 let g:ale_list_window_size_max = 5
 let b:ale_list_window_size = 1
@@ -205,3 +209,6 @@ let g:ConqueTerm_CloseOnEnd=1
 "    " Do Mac stuff here
 "  endif
 "endif
+set clipboard=unnamed
+map <M-s> :w<kEnter>  "Works in normal mode, must press Esc first"
+imap <M-s> <Esc>:w<kEnter>i "Works in insert mode, saves and puts back in insert mode"
