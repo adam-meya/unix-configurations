@@ -16,13 +16,6 @@ function grepedit() {
     node /Users/adomurad/sources/catedit/catedit.js `grep -Ril "$args"`
 }
 
-function r() {
-    dir="`pwd`"
-    cd ~/CS842-ToyVM/
-    ./run.sh $@
-    cd "$dir"
-}
-
 #Use ccache by default
 if [ -e /usr/lib/ccache ]; then 
 	export PATH=/usr/lib/ccache:$PATH
