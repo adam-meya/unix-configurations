@@ -13,11 +13,15 @@ function rsed() {
     gfind . -type f -print0 | xargs -0 sed -i $@
 }
 
+# command line shortcuts for apps
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias meld='/Applications/Meld.app/Contents/MacOS/Meld'
 alias sublime='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 
+# GNU utils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
+
+# typed find commands
 alias pygrep="gfind . -name '*.py' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
 alias jsgrep="gfind . \( -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
 alias luagrep="gfind . \( -name '*.lua' -o -name '*.moon' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
