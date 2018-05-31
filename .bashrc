@@ -23,12 +23,12 @@ alias jsgrep="gfind . \( -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -nam
 alias luagrep="gfind . \( -name '*.lua' -o -name '*.moon' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*' -print | xargs grep"
 alias find="gfind"
 
+# Colour in terminal
 export CLICOLOR=1
+# Colour in PS1 
 export PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]'
+# FZF for vim config
 export FZF_DEFAULT_COMMAND="gfind . \( -name '*.py' -o -name '*.js' -o -name '*.jsx' -o -name '*.html' -o -name '*.css' \) ! -path '*/node_modules/*' ! -path '*.min.*' ! -path './env/*' ! -path './env/*' ! -path './.git/*'"
-
-export NGROK_SUBDOMAIN="dev37"
-export WEB_ROOT="https://$NGROK_SUBDOMAIN.ngrok.io"
 
 export PYTHONDONTWRITEBYTECODE=1
 
